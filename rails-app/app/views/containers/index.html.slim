@@ -1,0 +1,40 @@
+.page-header
+  a.btn.btn-primary onclick="hyperDo('up')" data-toggle="modal" data-target="#stream-response" 
+    span.glyphicon.glyphicon-plus
+    span Up
+  a.btn.btn-primary onclick="hyperDo('down')" data-toggle="modal" data-target="#stream-response" 
+    span.glyphicon.glyphicon-minus
+    span Down
+  
+  h1 Containers
+
+.table-responsive
+  
+  - if @containers.blank?
+    .alert.alert-info Working container not found
+  - else
+    table.table.table-striped.table-bordered.table-hover
+      thead
+        tr
+          th ID
+          th Name
+          th Path
+          th Status
+      tbody
+        - @containers.each do | container |
+          tr
+            td = container["Id"].first(12)
+            td = container["Name"]
+            td = container["Path"]
+            td = container["State"]["Status"]
+          
+#stream-response.modal.fade role="dialog" 
+  .modal-dialog.modal-lg
+    .modal-content
+      .modal-header
+        button.close data-dismiss="modal" type="button" &times;
+        h4.modal-title Processing...
+      .modal-body
+        pre
+      .modal-footer
+        button.btn.btn-default data-dismiss="modal" type="button" Close          

@@ -1,0 +1,34 @@
+@import "bootstrap-variables.scss";
+@import "bootstrap-sprockets.scss";
+@import "bootstrap.scss";
+
+body {
+  padding-top: $navbar-height + 10px;
+}
+
+pre {
+  margin-bottom: 0
+}
+
+.modal-body {
+  overflow-y: scroll
+}
+
+.page-header {
+  a.btn {
+    float: right;
+    .glyphicon {
+      margin-right: 6px
+    }
+  }
+
+  a.btn + a.btn {
+    margin-right: 8px;
+  }
+}
+
+input[type="radio"], input[type="checkbox"] {
+  width: initial;
+  height: initial;
+  margin-top: 7px;
+}
