@@ -120,7 +120,7 @@ function networkUp () {
     docker logs -f cli
     exit 1
   fi
-  docker logs cli
+  docker logs -f cli
 }
 
 # Tear down running network
